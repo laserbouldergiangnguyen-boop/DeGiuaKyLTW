@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý thuyết - Lập trình Web</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling cho Menu Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Cấu trúc chính */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .question-block {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .question-block:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            color: #d63031;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #2d3436;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="about.html">Trả lời Lý thuyết</a>
+        <a href="https://wayground.com/join/game/U2FsdGVkX18EfwAoL2nPHTAe5Y0gMAiZp83231p7ci19%252FX8vYjgrk%252FV37m6kgNjaNdTY%252B2OJXWUsL6BG4H1FWg%253D%253D?gameType=live&page=summary">Bài tập 18</a>
+        <a href="https://wonderful-quokka-79d94f.netlify.app/den_keo_quan">Bài tập 19</a>
+        <a href="contact.html">Thông tin Điểm danh</a>
+    </nav>
+
+    <div class="container">
+        <h1>Phần 1: Trả lời Lý thuyết</h1>
+
+        <div class="question-block">
+            <h2>1. Sự khác biệt giữa position: absolute và position: relative</h2>
+            <p><strong>Khác biệt:</strong> <code>position: relative</code> giữ phần tử ở nguyên vị trí mặc định trong luồng tài liệu, các thẻ khác không bị ảnh hưởng. Trong khi đó, <code>position: absolute</code> sẽ "nhấc" phần tử đó ra khỏi luồng mặc định, nó sẽ định vị dựa trên phần tử cha gần nhất có cài đặt position (khác static).</p>
+            <p><strong>Ví dụ Responsive:</strong> Khi làm biểu tượng "số lượng" màu đỏ nằm đè lên "giỏ hàng", ta đặt giỏ hàng là <code>relative</code> (làm gốc), và số lượng là <code>absolute</code>. Khi màn hình co giãn, biểu tượng số lượng vẫn bám sát giỏ hàng mà không bị chạy lung tung.</p>
+            <p><strong>Ảnh hưởng deploy:</strong> Nếu lạm dụng <code>absolute</code> với đơn vị pixel cố định (px), khi đưa website lên hosting và xem trên điện thoại, giao diện sẽ bị vỡ. Thay vào đó, kết hợp <code>relative</code> và dùng đơn vị phần trăm (%) sẽ giúp website hiển thị tốt trên mọi thiết bị.</p>
+        </div>
+
+        <div class="question-block">
+            <h2>2. Quy trình đăng ký Domain, Hosting và vai trò của DNS</h2>
+            <p><strong>Quy trình:</strong> Đầu tiên, mua Tên miền (Domain - ví dụ: tenban.com). Sau đó, thuê Không gian lưu trữ (Hosting - nơi chứa code). Cuối cùng, cấu hình trỏ Domain về địa chỉ IP của Hosting.</p>
+            <p><strong>Vai trò của DNS:</strong> DNS hoạt động như một "danh bạ điện thoại". Khi người dùng gõ tên miền, DNS sẽ dịch tên miền đó thành địa chỉ IP của máy chủ chứa website để trình duyệt biết đường tìm đến.</p>
+            <p><strong>Công cụ Deploy miễn phí:</strong> Để deploy code tĩnh (HTML/CSS/JS) không cần mua server, ta có thể dùng <strong>GitHub Pages</strong> hoặc <strong>Netlify</strong>. Chỉ cần push code lên GitHub, hệ thống sẽ tự động build thành website.</p>
+            <p><strong>Rủi ro bảo mật:</strong> Nếu cấu hình sai (không bật HTTPS, cấu hình sai phân quyền thư mục), tin tặc có thể đánh cắp dữ liệu người dùng khi truyền tải hoặc can thiệp vào mã nguồn website.</p>
+        </div>
+
+        <div class="question-block">
+            <h2>3. So sánh let, const và var trong JavaScript</h2>
+            <p><strong>So sánh:</strong> <code>var</code> có phạm vi hoạt động theo hàm (function scope) và bị hoisting (đưa lên đầu file nhưng không gán giá trị). <code>let</code> và <code>const</code> có phạm vi theo khối (block scope) như vòng lặp, if/else, giúp code an toàn hơn. <code>const</code> dùng cho hằng số không thay đổi.</p>
+            <p><strong>Ví dụ tình huống lỗi thường gặp:</strong> Dùng <code>var</code> trong vòng lặp có hàm bất đồng bộ sẽ gây lỗi logic.</p>
+<pre>
+// Lỗi với var: Sẽ in ra 3 lần số 3
+for (var i = 0; i &lt; 3; i++) {
+    setTimeout(() => console.log(i), 100); 
+}
+
+// Khắc phục với let: Sẽ in ra 0, 1, 2
+for (let j = 0; j &lt; 3; j++) {
+    setTimeout(() => console.log(j), 100); 
+}
+</pre>
+            <p><strong>Cách Debug:</strong> Nhấn F12 mở <strong>Chrome DevTools</strong>, chọn tab <strong>Sources</strong>. Mở file JS, click vào số dòng để đặt <strong>Breakpoint</strong> (điểm dừng). Tải lại trang, code sẽ dừng tại đó, giúp ta kiểm tra giá trị của biến trong mục Scope để tìm ra lỗi.</p>
+        </div>
+
+        <div class="question-block">
+            <h2>4. Khái niệm Event Delegation trong JavaScript</h2>
+            <p><strong>Khái niệm:</strong> Thay vì gán sự kiện (event listener) cho từng phần tử con riêng lẻ, ta gán một sự kiện duy nhất cho phần tử cha chứa chúng. Kỹ thuật này dựa trên cơ chế "nổi bọt" (bubbling) của JavaScript.</p>
+            <p><strong>Ví dụ ứng dụng:</strong> Trong một danh sách sản phẩm <code>&lt;ul id="productList"&gt;</code>, khi bạn dùng JS thêm hoặc xóa các thẻ <code>&lt;li&gt;</code>, nếu gắn sự kiện trực tiếp vào thẻ li, các thẻ mới thêm sẽ không nhận được click. Nếu dùng Event Delegation gắn vào thẻ <code>&lt;ul&gt;</code>, mọi thẻ <code>&lt;li&gt;</code> mới sinh ra đều hoạt động bình thường.</p>
+            <p><strong>Lợi ích tối ưu:</strong> Code ngắn gọn hơn, trình duyệt tiết kiệm được rất nhiều bộ nhớ vì chỉ phải quản lý 1 sự kiện thay vì hàng trăm sự kiện lẻ tẻ, giúp website chạy nhanh và mượt hơn.</p>
+        </div>
+
+    </div>
+</body>
+</html>
